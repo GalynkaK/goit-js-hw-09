@@ -27,6 +27,7 @@ const options = {
 
     if (options.defaultDate.getTime() > selectedDates[0].getTime()) {
       Notiflix.Notify.failure('Please chose a date in the future');
+      refs.buttonStart.disabled = true;
       return;
     }
     refs.buttonStart.disabled = false;
