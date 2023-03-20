@@ -26,7 +26,7 @@ const options = {
     currentTime = Date.now;
 
     if (options.defaultDate.getTime() > selectedDates[0].getTime()) {
-      Notify.failure('Please chose a date in the future');
+      Notiflix.Notify.failure('Please chose a date in the future');
       return;
     }
     refs.buttonStart.disabled = false;
@@ -71,7 +71,8 @@ function onStartClick() {
     if (ms < 1000) {
       clearInterval(intervalId);
     }
-  }, 1000);
+    refs.buttonStart.disabled = false;
+  }, 1000)
 }
 
 function addLeadingZero(value) {
